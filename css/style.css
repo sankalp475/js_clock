@@ -1,0 +1,171 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--hh: 0;
+	--mm: 0;
+	--ss: 0;
+}
+body {
+	background-color: rgb(49, 48, 48);
+}
+.container {
+	width: 90%;
+	height: 100vh;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.clock {
+	width: 250px;
+	height: 250px;
+	background-color: transparent;
+	border-radius: 100%;
+	border: 7px solid rgb(9, 135, 252);
+	box-sizing: border-box;
+	box-shadow: 1px 1px 6px 2px #0987fc;
+	position: relative;
+	margin: 10px;
+}
+.clock::after {
+	content: "";
+	position: absolute;
+	top: 49%;
+	left: 3%;
+	bottom: 0px;
+	width: 95%;
+	height: 6px;
+	background-color: rgb(9, 135, 252);
+	transform: rotate(360deg);
+	z-index: 5;
+}
+
+.clock::before {
+	content: "";
+	position: absolute;
+	top: 49%;
+	left: 3%;
+	bottom: 0px;
+	width: 95%;
+	height: 6px;
+	background-color: rgb(9, 135, 252);
+	transform: rotate(90deg);
+	z-index: 4;
+}
+.marking {
+	content: "";
+	position: absolute;
+	top: 3%;
+	left: 50%;
+	bottom: 0px;
+	background-color: rgb(255, 255, 255);
+	z-index: 2;
+}
+.marking-1,
+.marking-2,
+.marking-3,
+.marking-4 {
+	width: 3px;
+	height: 94.9%;
+	background-color: #fff;
+	z-index: 0;
+}
+.marking-1 {
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+.marking-2 {
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	transform: rotate(60deg);
+}
+
+.marking-3 {
+	-webkit-transform: rotate(120deg);
+	-moz-transform: rotate(120deg);
+	transform: rotate(120deg);
+}
+
+.marking-4 {
+	-webkit-transform: rotate(150deg);
+	-moz-transform: rotate(150deg);
+	transform: rotate(150deg);
+}
+
+.inner-clock-face {
+	z-index: 10;
+}
+.inner-clock-face::before {
+	content: "";
+	position: absolute;
+	top: 8%;
+	left: 8%;
+	right: 8%;
+	bottom: 8%;
+	background-color: rgb(49, 48, 48);
+	z-index: 10;
+	border-radius: 100%;
+}
+
+.inner-clock-face::after {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	left: 49%;
+	top: 47%;
+	border-radius: 100%;
+	background-color: #5c5959;
+	z-index: 23;
+}
+
+.hand {
+	width: 40%;
+    right: 48%;
+    height: 6px;
+    /* background-color: rgb(9, 135, 252); */
+    position: absolute;
+    top: 48%;
+    border-radius: 6px;
+    transform-origin: 99%;
+    z-index: 21;
+}
+.hand.hour-hand {
+	width: 28%;
+    height: 6px;
+	background-color: rgb(9, 135, 252);
+	box-shadow: 0px 0px 20px 0px #0987fc;
+	transform: rotate(var(--hh));
+}
+
+.hand.min-hand {
+	width: 34%;
+    height: 4px;
+	background-color: rgb(252, 25, 9);
+	box-shadow: 0px 0px 20px 0px rgb(252, 25, 9);
+	transform: rotate(var(--mm));
+}
+
+.hand.second-hand {
+	width: 37%;
+    height: 3px;
+	background-color: rgb(226, 226, 226);
+	box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
+	transform: rotate(var(--ss));
+}
+
+button.btn {
+	padding: 10px 20px;
+	appearance: none;
+	border: none;
+	outline: none;
+	margin: 30px 10px;
+	box-shadow: 0px 1px 20px 0px rgb(9, 135, 252);
+	border: 2px solid rgb(9, 135, 252);
+}
