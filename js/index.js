@@ -3,7 +3,6 @@ const min = document.querySelector('.min-hand')
 const second = document.querySelector('.second-hand')
 
 function clock() {
-
 	const _hour_ = document.querySelector('.-hh-')
 	const _min_ = document.querySelector('.-mm-')
 	const _second_ = document.querySelector('.-ss-')
@@ -18,16 +17,6 @@ function clock() {
 	hour.style.setProperty('--hh', `${HH_degrees}deg`)
 	min.style.setProperty('--mm', `${MM_degrees}deg`)
 	second.style.setProperty('--ss', `${SS_degrees}deg`)
-
-	// _hour_.innerHTML = HH == 0? 12 : HH
-	// _min_.innerHTML = MM
-	// _second_.innerHTML = SS
-	// const time = {
-	// 	h : HH == 0? 12 : HH,
-	// 	m: MM,
-	// 	s: SS,
-	// }
-    // console.log(time)
 }
 setInterval(clock,1000)
 clock()
