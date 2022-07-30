@@ -118,54 +118,50 @@ body {
 	position: absolute;
 	width: 15px;
 	height: 15px;
-	left: 49%;
-	top: 47%;
+	left: calc(49% - 4px);
+    top: calc(49% - 4px);
 	border-radius: 100%;
 	background-color: #5c5959;
-	z-index: 23;
+	z-index: 30;
 }
 
 .hand {
-	width: 40%;
-    right: 48%;
-    height: 6px;
-    /* background-color: rgb(9, 135, 252); */
-    position: absolute;
-    top: 48%;
-    border-radius: 6px;
-    transform-origin: 99%;
-    z-index: 21;
+   /* background-color: red; */
+   width: 7px;
+   position: absolute;
+   left: calc(50% - 2px);
+   top: 45px;
+   border-radius: 10px;
 }
 .hand.hour-hand {
-	width: 28%;
-    height: 6px;
-	background-color: rgb(9, 135, 252);
+	height: 59px;
+    top: 60px;
+    transform-origin: bottom;
+    background-color: rgb(9, 135, 252);
 	box-shadow: 0px 0px 20px 0px #0987fc;
 	transform: rotate(var(--hh));
+	z-index: 29;
 }
+.hand.min-hand  {
 
-.hand.min-hand {
-	width: 34%;
-    height: 4px;
+    left: calc(50% - 1px);
+	top: 44px;
+	height: 75px;
+	width: 4px;
 	background-color: rgb(252, 25, 9);
 	box-shadow: 0px 0px 20px 0px rgb(252, 25, 9);
+	transform-origin: bottom;
 	transform: rotate(var(--mm));
+	z-index: 27;
 }
-
 .hand.second-hand {
-	width: 37%;
-    height: 3px;
-	background-color: rgb(226, 226, 226);
+	left: calc(50% - 1px);
+    top: 26px;
+    width: 4px;
+    height: 92px;
+    background-color: rgb(226, 226, 226);
 	box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
+	transform-origin: bottom;
 	transform: rotate(var(--ss));
-}
-
-button.btn {
-	padding: 10px 20px;
-	appearance: none;
-	border: none;
-	outline: none;
-	margin: 30px 10px;
-	box-shadow: 0px 1px 20px 0px rgb(9, 135, 252);
-	border: 2px solid rgb(9, 135, 252);
+    z-index: 25;
 }
